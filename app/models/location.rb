@@ -1,5 +1,4 @@
 class Location < ApplicationRecord
-  has_one :film
-  has_many :characters
+  belongs_to :film
   validates :name, presence: true, uniqueness: true
 end

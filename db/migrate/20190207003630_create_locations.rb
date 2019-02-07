@@ -4,7 +4,8 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :climate
       t.string :terrain
-      t.int :surface_water
+      t.integer :surface_water
+      t.references :film, foreign_key: true
 
       t.timestamps
     end

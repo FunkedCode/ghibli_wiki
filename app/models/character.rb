@@ -1,6 +1,5 @@
 class Character < ApplicationRecord
-  has_one :film
-  has_one :character_type
-  has_one :location
+  belongs_to :film
+  belongs_to :character_type
   validates :name, uniqueness: true, presence: true
 end
