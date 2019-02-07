@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  rank: 1
+  mal_url: MyString
+  image_url: MyString
+  mal_score: 1.5
+
+two:
+  title: MyString
+  rank: 1
+  mal_url: MyString
+  image_url: MyString
+  mal_score: 1.5

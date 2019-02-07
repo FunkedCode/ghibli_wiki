@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_023436) do
+ActiveRecord::Schema.define(version: 2019_02_07_211752) do
 
   create_table "character_types", force: :cascade do |t|
     t.string "name"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 2019_02_07_023436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["film_id"], name: "index_locations_on_film_id"
+  end
+
+  create_table "top_movies", force: :cascade do |t|
+    t.string "title"
+    t.integer "rank"
+    t.string "mal_url"
+    t.string "image_url"
+    t.float "mal_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

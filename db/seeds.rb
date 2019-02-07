@@ -28,8 +28,6 @@ Film.destroy_all
 #               rt_score: film['rt_score'])
 # end
 
-character_array = []
-
 uri = URI('https://ghibliapi.herokuapp.com/people')
 raw_json = Net::HTTP.get(uri)
 character_json = JSON.parse(raw_json)
@@ -62,8 +60,7 @@ character_json.each do |character|
 
   new_character.character_type = new_character_type
 
-  character_array.push(new_character)
-  #new_character.save
+  new_character.save
 
 end
 
@@ -80,9 +77,4 @@ location_json.each do |location|
   film_json = JSON.parse(Net::HTTP.get(URI(location['films'][0])))
   new_location.film = Film.find_by_title(film_json['title'])
   new_location.save
-end
-
-character_array.each do |character|
-  character.save
-  pp character.errors
 end
