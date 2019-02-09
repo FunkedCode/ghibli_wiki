@@ -1,0 +1,17 @@
+<%= form_with(model: character_type, local: true) do |form| %>
+  <% if character_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character_type.errors.count, "error") %> prohibited this character_type from being saved:</h2>
+
+      <ul>
+      <% character_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
