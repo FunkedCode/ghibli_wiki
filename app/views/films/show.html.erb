@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <div class="column column-50">
+    <img class="poster" src=<%= image_url("movie_posters/" + @film.title.parameterize.underscore + ".jpg") %> alt="poster">
+  </div>
+
+  <div class="column column-30 description">
+    <h2><%= @film.title %></h2>
+    <h3>Description</h3>
+    <p><%= @film.description %></p>
+    <h3>Location</h3>
+    <p><%= if @film.location != nil then link_to @film.location.name, @film.location else 'unknown' end %></p>
+    <h4>Director</h4>
+    <p><%= @film.director %></p>
+    <h4>Producer</h4>
+    <p><%= @film.producer %></p>
+    <h4>Release Date</h4>
+    <p><%= @film.release_date %></p>
+    <h4>Rotten Tomatoes</h4>
+    <p><%= @film.rt_score %>%</p>
+  </div>
+
+</div>
+
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>

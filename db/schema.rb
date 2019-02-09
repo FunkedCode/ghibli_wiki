@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_07_211752) do
     t.text "description"
     t.string "director"
     t.string "producer"
-    t.date "release_date"
+    t.integer "release_date"
     t.integer "rt_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

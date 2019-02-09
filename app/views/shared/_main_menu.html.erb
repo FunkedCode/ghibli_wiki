@@ -1,0 +1,16 @@
+
+<nav class="navigation">
+  <ul class="navigation_list">
+    <li class="navigation_item">
+      <img src= <%= image_url("main_logo.png") %> alt="logo" >
+      <h1 id="main_title">Ghibli Wiki</h1>
+    </li>
+    <li class="navigation_item"><%= link_to 'Films', films_path  %></li>
+    <li class="navigation_item"><%= link_to 'Locations', locations_path  %></li>
+    <li class="navigation_item"><a href="#">Item 3</a></li>
+    <li class="navigation_item"><a href="#">Item 4</a></li>
+    <li class="navigation_item"><a href="#">Item 5</a></li>
+    <li class="navigation_item"><a href="#">Item 6</a></li>
+    <li class="navigation_item"><%= link_to 'About', '/about'  %></li>
+  </ul>
+</nav>

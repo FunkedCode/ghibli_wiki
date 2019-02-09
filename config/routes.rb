@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   resources :top_movies
   root to: 'top_movies#index'
+
+  get ":page" => "pages#show"
 end

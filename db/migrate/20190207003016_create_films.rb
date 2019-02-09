@@ -5,7 +5,7 @@ class CreateFilms < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :director
       t.string :producer
-      t.date :release_date
+      t.integer :release_date
       t.integer :rt_score
 
       t.timestamps

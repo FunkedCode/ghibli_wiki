@@ -1,6 +1,8 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Locations</h1>
+
 
 <table>
   <thead>
@@ -10,11 +12,17 @@
   </thead>
 
   <tbody>
+
+  <%=
+    select_tag "select_film",
+               options_from_collection_for_select(@films, "id", "title", @films.ids),
+               :onchange => "alert('test')"
+  %>
+
     <% @locations.each do |location| %>
       <tr>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to location.name, location %></td>
+        <td><%= link_to location.film.title, location.film %></td>
       </tr>
     <% end %>
   </tbody>

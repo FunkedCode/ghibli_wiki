@@ -10,11 +10,14 @@
   </thead>
 
   <tbody>
+  <th>Title</th>
+  <th>Location</th>
+  <th>score</th>
     <% @films.each do |film| %>
       <tr>
         <td><%= link_to film.title, film %></td>
-        <td><%= link_to 'Edit', edit_film_path(film) %></td>
-        <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= if film.location != nil then link_to film.location.name, film.location else 'unknown' end %></td>
+        <td><%=  film.rt_score %></td>
       </tr>
     <% end %>
   </tbody>
