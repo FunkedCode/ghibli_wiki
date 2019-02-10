@@ -33,6 +33,10 @@
 h1{
     font-size: 30px;
 }
+#logo_container{
+    padding: 0;
+    margin: 0;
+}
 
 .description{
     display: inline;

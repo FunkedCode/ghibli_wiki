@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_top_movie_path(@top_movie) %> |
+<div class="row">
+  <div class="column">
+    <h2><%= link_to @top_movie.title, @top_movie.mal_url,target: :_blank %></h2>
+    <img class="poster" src= <%=@top_movie.image_url %> >
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_top_movie_path(@top_movie) %>
 <%= link_to 'Back', top_movies_path %>

@@ -9,14 +9,24 @@
     <h2><%= @film.title %></h2>
     <h3>Description</h3>
     <p><%= @film.description %></p>
-    <h3>Location</h3>
-    <p><%= if @film.location != nil then link_to @film.location.name, @film.location else 'unknown' end %></p>
     <h4>Director</h4>
     <p><%= @film.director %></p>
     <h4>Producer</h4>
     <p><%= @film.producer %></p>
     <h4>Release Date</h4>
     <p><%= @film.release_date %></p>
+    <h3>Location</h3>
+    <p><%= if @film.location != nil then link_to @film.location.name, @film.location else 'unknown' end %></p>
+    <h3>Characters</h3>
+    <ul>
+      <% @film.characters.each do |person| %>
+        <li>
+          <% if person != nil %>
+            <%= link_to person.name, person %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
     <h4>Rotten Tomatoes</h4>
     <p><%= @film.rt_score %>%</p>
   </div>
