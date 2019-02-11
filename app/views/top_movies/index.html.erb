@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Top 150 Movies</h1>
 <table>
   <thead>
@@ -21,6 +20,7 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @top_movies %>
 
 <br>
 

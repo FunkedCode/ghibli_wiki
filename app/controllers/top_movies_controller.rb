@@ -4,7 +4,7 @@ class TopMoviesController < ApplicationController
   # GET /top_movies
   # GET /top_movies.json
   def index
-    @top_movies = TopMovie.all
+    @top_movies = TopMovie.all.page params[:page]
   end
 
   # GET /top_movies/1
