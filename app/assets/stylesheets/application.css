@@ -76,6 +76,19 @@ a:active {
     width: 200px;
 }
 
+.location-drop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.location-image{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
 
 
 

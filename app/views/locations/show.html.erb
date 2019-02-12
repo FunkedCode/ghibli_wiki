@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row row-responsive">
-  <div class="column column-75 column-offset-10">
+<div class="row">
+  <div class="column column-50 column-offset-10">
     <h2><%= @location.name %> <img class="weather_icon" src=<%= image_url("weather/#{@location.climate.downcase}.png" ) %> alt='climate' /> </h2>
     <P>Climate: <%= @location.climate.gsub('TODO','Unknown') %></P>
     <p>Terrain: <%=@location.terrain.gsub('TODO','Unknown') %></p>
@@ -17,6 +17,9 @@
     <% end %>
     <br/>
     <%= link_to 'Back', locations_path %>
+  </div>
+  <div class="column column-35 location-drop">
+    <%= image_tag(image_url("location/#{rand(5)}.jpg"),alt: 'location',class: 'location-image') %>
   </div>
   <% if @location.film.characters.size > 0 %>
   <div class="column">
