@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_character_type_path(@character_type) %> |
+<div class="row">
+  <div class="column">
+    <h2><%= @character_type.name %>  <img src=<%= image_url("species/#{@character_type.name.downcase}.png") %>> </h2>
+    <p><%= @character_type.classification %></p>
+    <p><%= @character_type.eye_colors %></p>
+    <p><%= @character_type.hair_colors %></p>
+  </div>
+</div>
 <%= link_to 'Back', character_types_path %>

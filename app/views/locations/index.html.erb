@@ -13,10 +13,10 @@
 
   <tbody>
 
-  <%=
-    select_tag "select_film",
-               options_from_collection_for_select(@films, "id", "title", @films.ids),
-               :onchange => "alert('test')"
+  <%#=
+<!--    select_tag "select_film",-->
+<!--               options_from_collection_for_select(@films, "id", "title", @films.ids),-->
+<!--               :onchange => "alert('test')"-->
   %>
 
     <% @locations.each do |location| %>

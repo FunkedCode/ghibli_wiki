@@ -15,7 +15,6 @@
  */
 
 @import "milligram";
-
 .navigation_list {
     border-bottom: solid 1px #ccc;
     text-align: left;
@@ -33,6 +32,29 @@
 h1{
     font-size: 30px;
 }
+
+h3{
+    font-size: 20px;
+}
+/* unvisited link */
+a:link {
+    color: #606C76;
+}
+
+/* visited link */
+a:visited {
+    color: #606C76;
+}
+
+/* mouse over link */
+a:hover {
+    color: #82C1EC;
+}
+
+/* selected link */
+a:active {
+    color: #473535;
+}
 #logo_container{
     padding: 0;
     margin: 0;
@@ -42,6 +64,10 @@ h1{
     display: inline;
     word-wrap: break-word;
     padding-right: 500px;
+}
+
+.list_poster{
+    width: 225px;
 }
 
 

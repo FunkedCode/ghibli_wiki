@@ -5,18 +5,22 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
+      <th>Score</th>
     </tr>
   </thead>
 
   <tbody>
-  <th>Title</th>
-  <th>Location</th>
-  <th>score</th>
+    <% count = 1 %>
     <% @films.each do |film| %>
       <tr>
-        <td><%= link_to film.title, film %></td>
-        <td><%= if film.location != nil then link_to film.location.name, film.location else 'unknown' end %></td>
+        <td>
+          <%= link_to film do %>
+            <p><%= "#{count}. #{film.title}" %></p>
+            <img class="list_poster" src=<%= image_url("movie_posters/" + film.title.parameterize.underscore + ".jpg") %> alt="poster">
+            <% count +=1 %>
+          <%end %>
+        </td>
         <td><%=  film.rt_score %></td>
       </tr>
     <% end %>

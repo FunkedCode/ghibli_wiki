@@ -10,9 +10,20 @@
   </thead>
 
   <tbody>
-    <% @characters.each do |character| %>
+    <% @group_by_type = @characters.group_by {|p| p.character_type.name} %>
+    <% @group_by_type.each do |key, value| %>
       <tr>
-        <td><%= link_to character.name, character %></td>
+        <td>
+          <%= link_to value[0].character_type do %>
+            <h2><%= key.pluralize%>  <img src=<%=image_url("species/#{key.downcase}.png") %>></h2>
+          <% end %>
+          <ul>
+            <% value.each do |character| %>
+              <li><%= link_to character.name, character %></li>
+              <hr>
+            <% end %>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>

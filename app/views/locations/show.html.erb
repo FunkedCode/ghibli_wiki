@@ -1,12 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="column column-50">
+<div class="row row-responsive">
+  <div class="column column-75 column-offset-10">
     <h2><%= @location.name %> <img class="weather_icon" src=<%= image_url("weather/#{@location.climate.downcase}.png" ) %> alt='climate' /> </h2>
     <P>Climate: <%= @location.climate.gsub('TODO','Unknown') %></P>
     <p>Terrain: <%=@location.terrain.gsub('TODO','Unknown') %></p>
     <p>Surface Water: <%=@location.surface_water %></p>
+    <p>Featured in: <%= link_to @location.film.title, @location.film %></p>
+
+    <h2>Species</h2>
+    <% @location.film.character_types.uniq.each do |species| %>
+      <%= link_to image_tag(image_url("species/#{species.name.downcase}.png")), species %>
+      <br/>
+    <% end %>
+  </div>
+  <div class="column">
+    <h3>Residents</h3>
+    <ul>
+      <% @location.film.characters.each do |character| %>
+        <li><%= link_to character.name, character %></li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
-<%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

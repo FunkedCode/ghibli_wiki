@@ -9,12 +9,15 @@
     </tr>
   </thead>
 
+
   <tbody>
     <% @character_types.each do |character_type| %>
       <tr>
-        <td><%= link_to 'Show', character_type %></td>
-        <td><%= link_to 'Edit', edit_character_type_path(character_type) %></td>
-        <td><%= link_to 'Destroy', character_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <img src=<%= image_url( "species/#{character_type.name.downcase}.png") %>>
+          <%= link_to character_type.name, character_type %>
+        </td>
+        <td><%=character_type.classification %></td>
       </tr>
     <% end %>
   </tbody>

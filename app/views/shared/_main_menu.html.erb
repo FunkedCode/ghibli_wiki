@@ -2,13 +2,16 @@
 <nav class="navigation">
   <ul class="navigation_list">
     <div class="navigation_item" id="logo_container">
-      <%= link_to image_tag(image_url("main_logo.png")), root_path %>
+      <%= link_to root_path do %>
+      <%= image_tag(image_url("main_logo.png")) %>
       <h1 id="main_title">Ghibli Wiki</h1>
+        <% end %>
     </div>
     </li>
     <li class="navigation_item"><%= link_to 'Films', films_path  %></li>
     <li class="navigation_item"><%= link_to 'Locations', locations_path  %></li>
     <li class="navigation_item"><%= link_to 'Characters', characters_path  %></li>
+    <li class="navigation_item"><%= link_to 'Species', character_types_path  %></li>
     <li class="navigation_item"><%= link_to 'Other Anime', top_movies_path  %></li>
     <li class="navigation_item"><%= link_to 'About', '/about'  %></li>
   </ul>
