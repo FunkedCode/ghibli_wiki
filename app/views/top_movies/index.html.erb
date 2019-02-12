@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
-<h1>Top 150 Movies</h1>
+<div class="row">
+  <div class="column column-70">
+    <h1>Top 150 Movies</h1>
+  </div>
+  <div class="column column-25">
+    <div class="row">
+      <div class="column">
+        <%= form_tag(top_movies_path,method: :get) do %>
+          <%= text_field_tag :title %>
+        <% end %>
+      </div>
+      <div class="column">
+        <%= submit_tag 'Search' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table>
   <thead>
     <tr>

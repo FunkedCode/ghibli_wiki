@@ -4,7 +4,11 @@ class TopMoviesController < ApplicationController
   # GET /top_movies
   # GET /top_movies.json
   def index
-    @top_movies = TopMovie.all.page params[:page]
+    @top_movies = if params[:title]
+               TopMovie.where('title LIKE ?', "%#{params[:title]}%").page params[:page]
+             else
+               TopMovie.all.page params[:page]
+             end
   end
 
   # GET /top_movies/1
@@ -69,6 +73,7 @@ class TopMoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def top_movie_params
+      params.require(:top_movie).permit(:title)
       params.fetch(:top_movie, {})
     end
 end
