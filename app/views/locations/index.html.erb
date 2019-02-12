@@ -1,28 +1,17 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Locations</h1>
+<h2>Locations</h2>
 
 
 <table>
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
   </thead>
 
   <tbody>
-
-  <%#=
-<!--    select_tag "select_film",-->
-<!--               options_from_collection_for_select(@films, "id", "title", @films.ids),-->
-<!--               :onchange => "alert('test')"-->
-  %>
-
     <% @locations.each do |location| %>
       <tr>
         <td><%= link_to location.name, location %></td>
-        <td><%= link_to location.film.title, location.film %></td>
       </tr>
     <% end %>
   </tbody>

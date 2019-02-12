@@ -10,10 +10,12 @@
 
   <tbody>
     <% @top_movies.each do |top_movie| %>
-  <tr><th><%= link_to "#{top_movie.rank}. #{top_movie.title}", top_movie.mal_url,target: :_blank %></th></tr>
+    <tr>
+      <th><%= link_to "#{top_movie.rank}. #{top_movie.title}", top_movie.mal_url,target: :_blank %></th>
+    </tr>
       <tr>
         <td>
-          <img class="poster" src= <%=top_movie.image_url %> />
+          <%= image_tag(top_movie.image_url,alt: 'poster',class: 'poster') %>
         </td>
         <td><%= top_movie.mal_score %></td>
       </tr>

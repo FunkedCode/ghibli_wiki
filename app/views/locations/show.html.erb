@@ -10,7 +10,7 @@
 
     <h2>Species</h2>
     <% @location.film.character_types.uniq.each do |species| %>
-      <%= link_to image_tag(image_url("species/#{species.name.downcase}.png")), species %>
+      <%= link_to image_tag(image_url("species/#{species.name.downcase}.png"),alt: species.name), species %>
       <br/>
     <% end %>
   </div>

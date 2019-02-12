@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="column column-50">
-    <%= link_to image_tag(image_url("movie_posters/" + @character.film.title.parameterize.underscore + ".jpg")), @character.film %>
+    <%= link_to image_tag(image_url("movie_posters/" + @character.film.title.parameterize.underscore + ".jpg"),alt: @character.film.title), @character.film %>
   </div>
   <div class="column">
     <h2><%= @character.name %></h2>

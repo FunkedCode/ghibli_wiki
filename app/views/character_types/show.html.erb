@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="column">
-    <h2><%= @character_type.name %>  <img src=<%= image_url("species/#{@character_type.name.downcase}.png") %>> </h2>
+    <h2><%= @character_type.name %>  <img src=<%= image_url("species/#{@character_type.name.downcase}.png") %> alt=<%= @character_type.name %>> </h2>
     <p><%= @character_type.classification %></p>
     <p><%= @character_type.eye_colors %></p>
     <p><%= @character_type.hair_colors %></p>

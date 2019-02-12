@@ -1,12 +1,11 @@
 
 <nav class="navigation">
   <ul class="navigation_list">
-    <div class="navigation_item" id="logo_container">
+    <li class="navigation_item" id="logo_container">
       <%= link_to root_path do %>
-      <%= image_tag(image_url("main_logo.png")) %>
-      <h1 id="main_title">Ghibli Wiki</h1>
-        <% end %>
-    </div>
+        <%= image_tag(image_url("main_logo.png"),alt: 'logo') %>
+        <h1 id="main_title">Ghibli Wiki</h1>
+      <% end %>
     </li>
     <li class="navigation_item"><%= link_to 'Films', films_path  %></li>
     <li class="navigation_item"><%= link_to 'Locations', locations_path  %></li>
