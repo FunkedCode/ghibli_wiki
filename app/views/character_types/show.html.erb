@@ -2,9 +2,9 @@
 <div class="row">
   <div class="column">
     <h2><%= @character_type.name %>  <img src=<%= image_url("species/#{@character_type.name.downcase}.png") %> alt=<%= @character_type.name %>> </h2>
-    <p><%= @character_type.classification %></p>
-    <p><%= @character_type.eye_colors %></p>
-    <p><%= @character_type.hair_colors %></p>
+    <p>Classification: <%= @character_type.classification %></p>
+    <p>Eye Colors: <%= @character_type.eye_colors %></p>
+    <p>Hair Colors: <%= @character_type.hair_colors %></p>
   </div>
 </div>
 <%= link_to 'Back', character_types_path %>
