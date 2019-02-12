@@ -70,6 +70,12 @@ a:active {
     width: 225px;
 }
 
+.feature-box{
+    border-style: wave;
+    background-color: #e6deea;
+    width: 200px;
+}
+
 
 
 

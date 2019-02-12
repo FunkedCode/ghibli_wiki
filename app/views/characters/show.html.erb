@@ -8,10 +8,12 @@
     <h2><%= @character.name %></h2>
     <p><%=@character.gender %></p>
     <p><%=@character.age %></p>
-    <h3>Eye Color</h3>
-    <p style=<%= "color:" + @character.eye_color + ";"  %>><%=@character.eye_color %></p>
-    <h3>Hair Color</h3>
-    <p style=<%= "color:" + @character.hair_color + ";"  %>><%=@character.hair_color %></p>
+    <div class="feature-box">
+      <h3>Eye Color</h3>
+      <p style=<%= "color:" + @character.eye_color + ";"  %>><%=@character.eye_color %></p>
+      <h3>Hair Color</h3>
+      <p style=<%= "color:" + @character.hair_color + ";"  %>><%=@character.hair_color %></p>
+    </div>
     <P>Species: <%= link_to @character.character_type.name, @character.character_type %></P>
   </div>
 </div>

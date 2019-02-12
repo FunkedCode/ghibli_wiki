@@ -16,9 +16,10 @@
     <h4>Release Date</h4>
     <p><%= @film.release_date %></p>
     <h3>Location</h3>
-    <p><%= if @film.location != nil then link_to @film.location.name, @film.location else 'unknown' end %></p>
+    <p><%= if @film.location != nil then link_to @film.location.name, @film.location else 'Unknown' end %></p>
     <h3>Characters</h3>
     <ul>
+      <% if @film.characters.size > 0 %>
       <% @film.characters.each do |person| %>
         <li>
           <% if person != nil %>
@@ -26,12 +27,13 @@
           <% end %>
         </li>
       <% end %>
+        <% else %>
+      <p>Unknown</p>
+        <% end %>
     </ul>
     <h4>Rotten Tomatoes</h4>
     <p><%= @film.rt_score %>%</p>
   </div>
 
 </div>
-
-<%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>

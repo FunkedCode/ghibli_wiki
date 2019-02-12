@@ -8,12 +8,17 @@
     <p>Surface Water: <%=@location.surface_water %></p>
     <p>Featured in: <%= link_to @location.film.title, @location.film %></p>
 
-    <h2>Species</h2>
-    <% @location.film.character_types.uniq.each do |species| %>
-      <%= link_to image_tag(image_url("species/#{species.name.downcase}.png"),alt: species.name), species %>
-      <br/>
+    <% if @location.film.character_types.size > 0 %>
+      <h2>Species</h2>
+        <% @location.film.character_types.uniq.each do |species| %>
+          <%= link_to image_tag(image_url("species/#{species.name.downcase}.png"),alt: species.name), species %>
+          <br/>
+        <% end %>
     <% end %>
+    <br/>
+    <%= link_to 'Back', locations_path %>
   </div>
+  <% if @location.film.characters.size > 0 %>
   <div class="column">
     <h3>Residents</h3>
     <ul>
@@ -23,5 +28,5 @@
     </ul>
 
   </div>
+    <%end %>
 </div>
-<%= link_to 'Back', locations_path %>
