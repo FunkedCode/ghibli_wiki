@@ -15,6 +15,7 @@
  */
 
 @import "milligram";
+
 .navigation_list {
     border-bottom: solid 1px #ccc;
     text-align: left;
@@ -31,6 +32,10 @@
 
 h1{
     font-size: 30px;
+}
+
+h2{
+    font-size: 25px;
 }
 
 h3{
@@ -55,6 +60,11 @@ a:hover {
 a:active {
     color: #473535;
 }
+
+.inline-link:link, .inline-link:visited, .inline-link:hover, .inline-link:active{
+    color: #000000;
+}
+
 #logo_container{
     padding: 0;
     margin: 0;

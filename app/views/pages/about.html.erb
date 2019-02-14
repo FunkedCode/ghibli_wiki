@@ -4,10 +4,13 @@
   <div class="column">
     <h3>Data Sources</h3>
     <h4>Studio Ghibli API</h4>
-    <p>The Ghibli API will be used as the main content for the website. Content will include films, and the people and species that inhabit them.</p>
+    <p>The Ghibli API will be used as the main content for the website. Content will include <%= link_to 'films', films_path,class: 'inline-link'  %>, <%= link_to 'locations', locations_path,class: 'inline-link'  %>, and the <%= link_to 'people', characters_path,class: 'inline-link'  %> and <%= link_to 'species', character_types_path,class: 'inline-link'  %> that inhabit them.</p>
+    <p>Data is grabbed from JSON endpoints with relationships found through endpoint URL's.</p>
+    <P>This data relates to Jikans data as they both contain Ghibli films and can be linked in the future. The one issue in the way is Japanese to English translation between the two data sources.</P>
     <p><a href="https://ghibliapi.herokuapp.com">https://ghibliapi.herokuapp.com</a></p>
     <h4>Jikan</h4>
-    <p>Suggestions for other anime movies users may be interested in with their related scores from myanimelist.</p>
+    <p>Suggestions for <%= link_to 'other anime movies', top_movies_path ,class: 'inline-link' %> users may be interested in with their related scores from myanimelist.</p>
+    <p>Data is grabbed from JSON endpoints. The images are found through the api as well through myanimelist URL's</p>
     <p><a href="https://jikan.moe">https://jikan.moe</a></p>
     <p>All icons found at <a href="https://www.flaticon.com/">https://www.flaticon.com/</a>.</p>
   </div>
