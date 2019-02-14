@@ -16,7 +16,7 @@
         <% end %>
     <% end %>
     <br/>
-    <%= link_to 'Back', locations_path %>
+    <%= link_to 'Back', url_for(:back) %>
   </div>
   <div class="column column-35 location-drop">
     <%= image_tag(image_url("location/#{rand(5)}.jpg"),alt: 'location',class: 'location-image') %>
